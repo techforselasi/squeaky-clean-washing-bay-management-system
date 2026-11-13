@@ -1,39 +1,12 @@
  -- =====================================================
 -- Squeaky Clean Washing Bay — Full MySQL Schema + Seeds
 -- =====================================================
--- Import this once in MySQL Workbench:
---   1. Open database/car_washing_bay_db.sql  (this is the ONLY schema file)
---   2. Execute the whole script (lightning bolt / Ctrl+Shift+Enter)
---   3. Confirm config/database.php uses:
---        DB_NAME = squeaky_clean_washing_bay_db
---
--- Re-run this full file whenever schema changes (it drops & recreates tables).
--- Do not maintain separate patch SQL files.
--- This schema supports the current app features:
---   - Manager / attendant login
---   - Vehicle check-in, bays, washers, services
---   - Billing + Cash/MoMo payment (transactions) — all paid money is stored for reports
---   - Manager revenue metrics + downloadable/printable revenue reports
---   - Manager can create / deactivate / reactivate attendant logins (user_status)
---   - Add / remove / toggle machinery (same machinery table)
--- =====================================================
 
 CREATE DATABASE IF NOT EXISTS squeaky_clean_washing_bay_db
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
 USE squeaky_clean_washing_bay_db;
-
--- Clean rebuild for local setup (safe to re-run this file)
-SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS transactions;
-DROP TABLE IF EXISTS vehicles;
-DROP TABLE IF EXISTS machinery;
-DROP TABLE IF EXISTS services;
-DROP TABLE IF EXISTS bays;
-DROP TABLE IF EXISTS washers;
-DROP TABLE IF EXISTS users;
-SET FOREIGN_KEY_CHECKS = 1;
 
 -- -----------------------------------------------------
 -- Users (manager / attendant login)
