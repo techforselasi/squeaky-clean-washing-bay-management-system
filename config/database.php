@@ -1,8 +1,8 @@
 <?php
 const DB_HOST="127.0.0.1";
 const DB_NAME="squeaky_clean_washing_bay_db";
-const DB_USER="root";
-const DB_PASSWORD="Leslie12345";
+const DB_USER="use your db username";
+const DB_PASSWORD="use your passowrd";
 
 
 try {
